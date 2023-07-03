@@ -1,0 +1,17 @@
+<svg height="200" width="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <g id="star">
+      <polygon points="6.48,4.5 5.4,0.9 4.32,4.5 0.9,4.5 3.68,6.45 2.62,10.0 5.4,7.8 8.18,10 7.12,6.45 9.9,4.5"/>
+    </g>
+    <mask id="starMask" x="0" y="0" width="200" height="200">
+      <rect x="0" y="0" width="200" height="200" fill="white" />
+      <g transform="translate(30, 10) scale(22)">
+        <use href="#star" fill="black"/>
+      </g>
+    </mask>
+  </defs>
+  <circle cx="100" cy="100" r="90" fill="#bc8cd3" mask="url(#starMask)" />
+  <g transform="translate(100, 90) scale(10)">
+    <use href="#star" fill="#d0a3d380"/>
+  </g>
+</svg>

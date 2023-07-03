@@ -1,0 +1,48 @@
+{
+  "name": "codesandbox-template-vite",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "start": "vite",
+    "test": "rm -rf node_modules; npm i react-beyond@latest @react-beyond/errorfallback@latest @react-beyond/classfor@latest @react-beyond/clsx@latest @react-beyond/ifelse@latest @react-beyond/hrefhandler@latest @react-beyond/loader@latest @react-beyond/menu@latest @react-beyond/mobx@latest @react-beyond/tooltip@latest @react-beyond/transpose@latest @react-beyond/tw@latest; npx vite --force"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.13.6",
+    "@react-beyond/classfor": "^1.0.0-beta.2",
+    "@react-beyond/clsx": "^1.0.0-beta.2",
+    "@react-beyond/errorfallback": "^1.0.0-beta.2",
+    "@react-beyond/hrefhandler": "^1.0.0-beta.2",
+    "@react-beyond/ifelse": "^1.0.0-beta.2",
+    "@react-beyond/loader": "^1.0.0-beta.2",
+    "@react-beyond/menu": "^1.0.0-beta.2",
+    "@react-beyond/mobx": "^1.0.0-beta.2",
+    "@react-beyond/tooltip": "^1.0.0-beta.2",
+    "@react-beyond/transpose": "^1.0.0-beta.2",
+    "@react-beyond/tw": "^1.0.0-beta.2",
+    "autoprefixer": "^10.4.14",
+    "clsx": "^1.2.1",
+    "react": "^18.2.0",
+    "react-beyond": "^1.0.0-beta.2",
+    "react-dom": "^18.2.0",
+    "react-laag": "^2.0.5"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.60.0",
+    "@typescript-eslint/parser": "^5.60.0",
+    "@vitejs/plugin-react": "^4.0.0",
+    "eslint": "^8.43.0",
+    "eslint-plugin-react": "^7.32.2",
+    "prettier": "^2.8.8",
+    "prettier-eslint": "^15.0.1",
+    "tailwindcss": "^3.3.2",
+    "typescript": "^5.1.3",
+    "vite": "^4.3.0"
+  }
+}
