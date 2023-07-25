@@ -20,7 +20,7 @@ import App from './App'
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <Beyond
-      hocs={[
+      features={[
         classFor({ clsx: true }),
         clsx(),
         errorFallback({}),
@@ -34,13 +34,11 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         menu(),
         tw(),
         transpose(),
-        // deepTranspose({
         //   id: 'deepTooltip',
         //   customDirective: 'x-tooltip',
         //   render: ({ self, directiveValue }) => (
         //     <Tooltip title={directiveValue}>{self}</Tooltip>
         //   )
-        // }),
         tooltip({
           render: ({ self, directiveValue }) => (
             <Tooltip title={directiveValue}>{self}</Tooltip>
