@@ -1,13 +1,14 @@
-import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
-import clsx from 'clsx'
 import { Tooltip } from '@mui/material'
+import { useEffect, useState } from 'react'
+import './App.css'
+import reactLogo from './assets/react.svg'
+import { store } from './store'
 
 function App() {
   const [count, setCount] = useState(0)
 
   const [link, setLink] = useState('https://reactjs.org')
+
   useEffect(() => {
     setTimeout(() => {
       setLink('https://vitejs.dev')
@@ -38,11 +39,12 @@ function App() {
       <h1>React + Beyond</h1>
       <div className="card" id="what">
         <button
-          onClick={() => setCount((count) => count + 1)}
+          // onClick={() => setCount((count) => count + 1)}
+          onClick={() => store.counter++}
           x-tooltip="Hey!"
           x-if={true}
         >
-          count is {count}
+          counter is {store.counter}
         </button>
         <button x-else-if={true}>button 2</button>
         <button x-else-if={true}>button 3</button>
@@ -54,18 +56,22 @@ function App() {
           ]}
           x-menu={{
             placement: 'right-start',
-            body: (close) => (
-              <ul
-                x-tw={[
-                  'bg-white text-slate-700 p-3 rounded',
-                  '[&_li:hover]:bg-slate-200',
-                  '[&_li:hover]:cursor-pointer'
-                ]}
-              >
-                <li onClick={close}>menu item 1</li>
-                <li onClick={close}>menu item 2</li>
-                <li onClick={close}>menu item 3</li>
-              </ul>
+            body: ({ close, Arrow }) => (
+              <>
+                <ul
+                  x-tw={[
+                    'bg-white text-slate-700 p-3 rounded',
+                    '[&_li:hover]:cursor-pointer',
+                    '[&_li:hover]:bg-slate-200'
+                    // '[&_li:hover]:x-[bg-slate-200,cursor-pointer]'
+                  ]}
+                >
+                  <li onClick={close}>menu item 1</li>
+                  <li onClick={close}>menu item 2</li>
+                  <li onClick={close}>menu item 3</li>
+                </ul>
+                {/* <Arrow /> */}
+              </>
             )
           }}
         >

@@ -13,9 +13,11 @@ import { menu } from '@react-beyond/menu'
 import { tooltip } from '@react-beyond/tooltip'
 import { transpose } from '@react-beyond/transpose'
 import { tw } from '@react-beyond/tw'
+import { hoc } from '@react-beyond/hoc'
 import { Beyond } from 'react-beyond'
 
 import App from './App'
+import { observer } from 'mobx-react-lite'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -33,7 +35,8 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         loader(),
         menu(),
         tw(),
-        transpose(),
+        hoc(observer),
+        // transpose(),
         //   id: 'deepTooltip',
         //   customDirective: 'x-tooltip',
         //   render: ({ self, directiveValue }) => (
