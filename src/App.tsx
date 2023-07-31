@@ -63,14 +63,13 @@ function App() {
                     'bg-white text-slate-700 p-3 rounded',
                     '[&_li:hover]:cursor-pointer',
                     '[&_li:hover]:bg-slate-200'
-                    // '[&_li:hover]:x-[bg-slate-200,cursor-pointer]'
                   ]}
                 >
                   <li onClick={close}>menu item 1</li>
                   <li onClick={close}>menu item 2</li>
                   <li onClick={close}>menu item 3</li>
                 </ul>
-                {/* <Arrow /> */}
+                <Arrow />
               </>
             )
           }}

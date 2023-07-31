@@ -1,5 +1,5 @@
 import Tooltip from '@mui/material/Tooltip'
-import React from 'react'
+import React, { FC, useState } from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 
@@ -14,6 +14,7 @@ import { tooltip } from '@react-beyond/tooltip'
 import { transpose } from '@react-beyond/transpose'
 import { tw } from '@react-beyond/tw'
 import { hoc } from '@react-beyond/hoc'
+import { rxjs } from '@react-beyond/rxjs'
 import { Beyond } from 'react-beyond'
 
 import App from './App'
@@ -36,12 +37,14 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         menu(),
         tw(),
         hoc(observer),
-        // transpose(),
-        //   id: 'deepTooltip',
-        //   customDirective: 'x-tooltip',
-        //   render: ({ self, directiveValue }) => (
-        //     <Tooltip title={directiveValue}>{self}</Tooltip>
-        //   )
+        rxjs(),
+        transpose({
+          id: 'transpose',
+          customDirective: 'x-traponse',
+          render: ({ self, directiveValue }) => (
+            <Tooltip title={directiveValue}>{self}</Tooltip>
+          )
+        }),
         tooltip({
           render: ({ self, directiveValue }) => (
             <Tooltip title={directiveValue}>{self}</Tooltip>

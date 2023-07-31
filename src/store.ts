@@ -13,3 +13,15 @@ export const store = makeAutoObservable({
     return this._counter * 2
   }
 })
+
+import { of, Observable } from 'rxjs'
+
+const initialState = {
+  counter: 0
+}
+
+export const state$ = of(initialState)
+
+console.log(state$)
+console.log(state$ instanceof Observable)
+state$.subscribe(console.log)
