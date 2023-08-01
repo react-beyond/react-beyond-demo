@@ -28,6 +28,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         clsx(),
         errorFallback({}),
         hrefHandler({
+          onlyRelative: false,
           navigate: (href) => {
             console.log(`Navigating to ${href}`)
           }
