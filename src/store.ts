@@ -1,4 +1,5 @@
 import { makeAutoObservable } from 'mobx'
+import { ReplaySubject, Subject, map, scan, startWith } from 'rxjs'
 
 export const store = makeAutoObservable({
   _counter: 0,
@@ -14,14 +15,8 @@ export const store = makeAutoObservable({
   }
 })
 
-import { of, Observable } from 'rxjs'
-
-const initialState = {
-  counter: 0
-}
-
-export const state$ = of(initialState)
-
-console.log(state$)
-console.log(state$ instanceof Observable)
-state$.subscribe(console.log)
+export const counterSubject = new ReplaySubject()
+export const counter$ = counterSubject.pipe(
+  scan((count, value) => count + 1, 0),
+  startWith(0)
+)

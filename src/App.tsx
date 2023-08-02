@@ -1,12 +1,11 @@
 import { Tooltip } from '@mui/material'
 import { useEffect, useState } from 'react'
+import { map } from 'rxjs'
 import './App.css'
 import reactLogo from './assets/react.svg'
-import { store } from './store'
+import { counter$, counterSubject, store } from './store'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   const [link, setLink] = useState('https://reactjs.org')
 
   useEffect(() => {
@@ -39,8 +38,10 @@ function App() {
       <h1>React + Beyond</h1>
       <div className="card" id="what">
         <button
-          // onClick={() => setCount((count) => count + 1)}
-          onClick={() => store.counter++}
+          onClick={() => {
+            store.counter++
+            counterSubject.next(1)
+          }}
           x-tooltip="Hey!"
           x-if={true}
         >
@@ -76,9 +77,12 @@ function App() {
         >
           This is a menu
         </button>
+        <div>
+          rxjs value: {counter$}
+          <br />
+          double: {counter$.pipe(map((v) => v * 2))}
+        </div>
       </div>
     </div>
   )
 }
-
-export default App
